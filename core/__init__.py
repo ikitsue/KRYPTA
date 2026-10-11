@@ -1,1 +1,1 @@
-"""Logique métier de Ciphera."""
+"""Logique métier de KRYPTA."""

@@ -1,6 +1,6 @@
-# Ciphera
+# KRYPTA
 
-Ciphera est une application Windows de bureau, en français, pour coder des textes par substitution ou les chiffrer localement. Elle ne demande ni compte, ni serveur, ni service payant. L’interface et les traitements restent sur l’ordinateur.
+KRYPTA est une application Windows de bureau, en français, pour coder des textes par substitution ou les chiffrer localement. Elle ne demande ni compte, ni serveur, ni service payant. L’interface et les traitements restent sur l’ordinateur.
 
 ## Installation
 
@@ -21,7 +21,7 @@ Si PowerShell bloque l’activation de l’environnement, appelez directement le
 .\.venv\Scripts\python.exe main.py
 ```
 
-Le lanceur Windows `run_ciphera.bat` démarre l’application depuis l’environnement `.venv`. Les données se trouvent dans `%APPDATA%\Ciphera\ciphera.sqlite3` (sur Windows).
+Le lanceur Windows `run_krypta.bat` démarre l’application depuis l’environnement `.venv`. Pour conserver les données des versions précédentes, la base locale existante reste dans `%APPDATA%\Ciphera\ciphera.sqlite3` (sur Windows).
 
 ## Utilisation
 
@@ -64,14 +64,14 @@ Les tests couvrent les aller-retours Unicode et les formats, les collisions, les
 Depuis la racine du projet, après installation des dépendances :
 
 ```powershell
-.\.venv\Scripts\pyinstaller.exe --noconfirm --clean --windowed --name Ciphera main.py
+.\.venv\Scripts\pyinstaller.exe --noconfirm --clean --windowed --name KRYPTA main.py
 ```
 
-Le programme est généré dans `dist\Ciphera\` (distribution en dossier). Pour produire un exécutable unique, ajoutez `--onefile`. Testez toujours le résultat sur une machine Windows cible ; le premier démarrage peut prendre quelques secondes.
+Le programme est généré dans `dist\KRYPTA\` (distribution en dossier). Pour produire un exécutable unique, ajoutez `--onefile`. Testez toujours le résultat sur une machine Windows cible ; le premier démarrage peut prendre quelques secondes.
 
 ## Dépannage et limites
 
 - Si PySide6 ne s’installe pas, vérifiez que Python est une version 64 bits prise en charge et mettez `pip` à jour.
-- En cas d’erreur de lecture/écriture, vérifiez les droits d’accès au dossier `%APPDATA%\Ciphera`.
+- En cas d’erreur de lecture/écriture, vérifiez les droits d’accès au dossier `%APPDATA%\Ciphera` (conservé pour compatibilité avec les données déjà créées).
 - Une clé dont des jetons se chevauchent ne peut pas être utilisée au format compact ; créez des jetons préfixes distincts ou sélectionnez le format séparé.
-- La base locale et les fichiers exportés ne sont pas chiffrés par Ciphera. Protégez le compte Windows et vos sauvegardes selon vos besoins.
+- La base locale et les fichiers exportés ne sont pas chiffrés par KRYPTA. Protégez le compte Windows et vos sauvegardes selon vos besoins.

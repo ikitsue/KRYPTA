@@ -1,4 +1,4 @@
-"""Point d’entrée de l’application Ciphera."""
+"""Point d’entrée de l’application KRYPTA."""
 
 from __future__ import annotations
 
@@ -16,8 +16,8 @@ def main() -> int:
         format="%(asctime)s %(levelname)s %(name)s: %(message)s",
     )
     app = QApplication(sys.argv)
-    app.setApplicationName("Ciphera")
-    app.setOrganizationName("Ciphera")
+    app.setApplicationName("KRYPTA")
+    app.setOrganizationName("KRYPTA")
     window = MainWindow()
     window.show()
     return app.exec()

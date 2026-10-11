@@ -1,1 +1,1 @@
-"""Chiffrement authentifié de Ciphera."""
+"""Chiffrement authentifié de KRYPTA."""

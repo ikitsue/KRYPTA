@@ -5,3 +5,24 @@ __pycache__/
 build/
 dist/
 *.spec
+
+# Local settings, databases, credentials, and diagnostic output
+.env*
+!.env.example
+*.db
+*.db-*
+*.sqlite*
+*.log
+*.pem
+*.p12
+*.pfx
+*.key
+secrets/
+
+# Editor and operating-system files
+.idea/
+.DS_Store
+Thumbs.db
+*.tmp
+*.bak
+*.swp

@@ -91,7 +91,7 @@ def decrypt_text(envelope_text: str, password: str) -> str:
     if not isinstance(envelope_text, str) or len(envelope_text) > MAX_ENVELOPE_BYTES:
         raise CipheraCryptoError("Le message chiffré dépasse la taille autorisée.")
     if not envelope_text.startswith(MAGIC):
-        raise CipheraCryptoError("Format Ciphera inconnu ou version non prise en charge.")
+        raise CipheraCryptoError("Format de message inconnu ou version non prise en charge.")
     payload = _decode_b64(envelope_text[len(MAGIC) :])
     if len(payload) > MAX_ENVELOPE_BYTES:
         raise CipheraCryptoError("Le message chiffré dépasse la taille autorisée.")

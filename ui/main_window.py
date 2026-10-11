@@ -1,4 +1,4 @@
-"""Fenêtre principale et vues de l’application Ciphera."""
+"""Fenêtre principale et vues de l’application KRYPTA."""
 
 from __future__ import annotations
 
@@ -75,7 +75,7 @@ class MainWindow(QMainWindow):
         self.thread_pool = QThreadPool.globalInstance()
         self.keys: list[SubstitutionKey] = []
         self._worker: TransformWorker | None = None
-        self.setWindowTitle("Ciphera — codage et chiffrement local")
+        self.setWindowTitle("KRYPTA — codage et chiffrement local")
         self.resize(1280, 820)
         self.setMinimumSize(940, 640)
         self.setStyleSheet(APP_STYLE)
@@ -94,7 +94,7 @@ class MainWindow(QMainWindow):
         sidebar.setFixedWidth(218)
         side_layout = QVBoxLayout(sidebar)
         side_layout.setContentsMargins(18, 24, 18, 20)
-        brand = QLabel("Ciphera")
+        brand = QLabel("KRYPTA")
         brand.setObjectName("brand")
         side_layout.addWidget(brand)
         tagline = QLabel("Vos textes, en local")
@@ -142,7 +142,7 @@ class MainWindow(QMainWindow):
 
     def _home_page(self) -> QWidget:
         page, layout = self._page_shell(
-            "Bienvenue dans Ciphera",
+            "Bienvenue dans KRYPTA",
             "Codez avec vos propres correspondances ou protégez vos textes avec un chiffrement authentifié. "
             "Tout fonctionne sur cet ordinateur, sans compte ni serveur.",
         )
@@ -342,7 +342,7 @@ class MainWindow(QMainWindow):
         self.history_enabled.toggled.connect(self._set_history_enabled)
         layout.addWidget(self.history_enabled)
         details = QLabel(
-            "Quand cette option est activée, Ciphera conserve uniquement la date UTC, l’action, "
+            "Quand cette option est activée, KRYPTA conserve uniquement la date UTC, l’action, "
             "le mode et le nom de la clé. Le contenu des textes, les mots de passe et les clés "
             "cryptographiques ne sont jamais enregistrés."
         )
@@ -478,7 +478,7 @@ class MainWindow(QMainWindow):
             self._show_error("Import impossible", str(error))
 
     def _export_text(self) -> None:
-        path, _ = QFileDialog.getSaveFileName(self, "Exporter le résultat", "ciphera-resultat.txt", "Texte (*.txt)")
+        path, _ = QFileDialog.getSaveFileName(self, "Exporter le résultat", "krypta-resultat.txt", "Texte (*.txt)")
         if not path:
             return
         try:
@@ -582,7 +582,7 @@ class MainWindow(QMainWindow):
             self._show_error("Suppression impossible", str(error))
 
     def _import_key(self) -> None:
-        path, _ = QFileDialog.getOpenFileName(self, "Importer une clé", "", "Clé Ciphera (*.json)")
+        path, _ = QFileDialog.getOpenFileName(self, "Importer une clé", "", "Clé KRYPTA (*.json)")
         if not path:
             return
         try:
@@ -600,7 +600,7 @@ class MainWindow(QMainWindow):
         if key is None:
             return
         path, _ = QFileDialog.getSaveFileName(
-            self, "Exporter une clé", f"{key.name}.json", "Clé Ciphera (*.json)"
+            self, "Exporter une clé", f"{key.name}.json", "Clé KRYPTA (*.json)"
         )
         if not path:
             return

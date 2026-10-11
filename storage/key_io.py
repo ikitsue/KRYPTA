@@ -1,4 +1,4 @@
-"""Import/export strict des clés Ciphera au format JSON versionné."""
+"""Import/export strict des clés KRYPTA au format JSON versionné."""
 
 from __future__ import annotations
 
@@ -39,7 +39,7 @@ def key_from_json(content: str) -> SubstitutionKey:
     except (json.JSONDecodeError, UnicodeEncodeError) as error:
         raise KeyFileError("Le fichier n’est pas un JSON valide.") from error
     if not isinstance(data, dict) or set(data) != ROOT_FIELDS:
-        raise KeyFileError("Le fichier ne correspond pas au schéma Ciphera attendu.")
+        raise KeyFileError("Le fichier ne correspond pas au schéma de clé attendu.")
     if type(data["schema_version"]) is not int or data["schema_version"] != SCHEMA_VERSION:
         raise KeyFileError("Version du fichier de clé non prise en charge.")
     if data["mode"] != "substitution":

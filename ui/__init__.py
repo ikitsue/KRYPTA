@@ -1,1 +1,1 @@
-"""Interface utilisateur de Ciphera."""
+"""Interface utilisateur de KRYPTA."""
